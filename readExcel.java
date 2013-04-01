@@ -1,4 +1,3 @@
-
 //Imports
 //Make sure you have the POI Jar library in your build path
 import java.io.File;
@@ -15,7 +14,7 @@ public class readExcel
 
 private static void readFile(String path) throws IOException
   {
-  //Path to the excel file
+        //Path to the excel file
 	File datafile=new File(path);
 	//A File Input Stream to read the data
 	FileInputStream fis=new FileInputStream(datafile);
@@ -41,7 +40,7 @@ private static void readFile(String path) throws IOException
 	//Make a call to the method cellToString which actually converts the cell contents to String
 	String value=cellToString(cell);
 	data[i][j]=value;
-  //Here is where you write the logic to handle the data.I am just printing out the contents here.
+        //Here is where you write the logic to handle the data.I am just printing out the contents here.
 	System.out.println("The value is " +value);
 	}
 	}
