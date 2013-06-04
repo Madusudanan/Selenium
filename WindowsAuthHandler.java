@@ -11,8 +11,8 @@ Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, nu
 Robot robot = new Robot();
 //Tell selenium to treat this Windows authentication pop-up as Javascript pop-up 
 Alert alert=driver.switchTo().alert(); 
-//Get the URL
-dr.get("the url"); 
+//Get the URL.driver is the Selenium Driver here e.g InternetExplorerDriver,FirefoxDriver etc.
+driver.get("the url"); 
 //Now Send the User name
 alert.sendKeys("username"); 
 //Here AWT comes into the picture.First press the tab key to transfer control to the password text field
