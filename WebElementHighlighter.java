@@ -11,7 +11,13 @@ import org.openqa.selenium.WebElement;
 
 public class WebElementHighlighter {
   
-  //Uses black colour.We can use any of the colours that Javascript recognizes.
+  /*
+  * Uses black colour for selection.We can use any of the colours that Javascript recognizes.
+  * A good practice is to call this method before actually selecting the element using selenium webdriver.
+  * So that we can see what selenium is actually doing before working with it.
+  * Calling it later may lead to exceptions,since the element might not be visible after working with it.
+  */
+  
 	public void highlightElement(WebDriver driver, WebElement element) { 
 		for (int i = 0; i < 1; i++) { 
 			JavascriptExecutor js = (JavascriptExecutor)driver;
