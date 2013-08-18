@@ -9,6 +9,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 
 public class readExcel
 
@@ -50,17 +51,25 @@ public class readExcel
 	}
 
 	private static String cellToString(HSSFCell cell) {
-		int type;
+		
 		Object result;
-		type = cell.getCellType();
 
-		switch (type) {
-		case 0:
+		switch (cell.getCellType()) {
+			
+		case Cell.CELL_TYPE_NUMERIC:
 			result = cell.getNumericCellValue();
 			break;
 
-		case 1:
+		case Cell.CELL_TYPE_STRING:
 			result = cell.getStringCellValue();
+			break;
+
+		case Cell.CELL_TYPE_BOOLEAN:
+			result = cell.getBooleanCellValue();
+			break;
+
+		case Cell.CELL_TYPE_FORMULA:
+			result = cell.getCellFormula();
 			break;
 
 		default:
