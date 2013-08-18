@@ -4,6 +4,7 @@
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -11,7 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class readExcelXLSX {
 
-  public static String[][] readExcel(String absolutePathToFile) {
+	public static String[][] readExcel(String absolutePathToFile) {
 
 		// A Two dimensional array of Strings which represents the data in the
 		// sheet
@@ -57,17 +58,24 @@ public class readExcelXLSX {
 	}
 
 	private static String cellToString(XSSFCell cell) {
-		int type;
-		Object result;
-		type = cell.getCellType();
 
-		switch (type) {
-		case 0:
+		Object result;
+
+		switch (cell.getCellType()) {
+		case Cell.CELL_TYPE_NUMERIC:
 			result = cell.getNumericCellValue();
 			break;
 
-		case 1:
+		case Cell.CELL_TYPE_STRING:
 			result = cell.getStringCellValue();
+			break;
+
+		case Cell.CELL_TYPE_BOOLEAN:
+			result = cell.getBooleanCellValue();
+			break;
+
+		case Cell.CELL_TYPE_FORMULA:
+			result = cell.getCellFormula();
 			break;
 
 		default:
