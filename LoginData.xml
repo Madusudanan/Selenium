@@ -1,0 +1,16 @@
+<!-- This XML is used for demonstrating data usage in automated tests  -->
+<!-- Please see my blog for more information -->
+<DataFile>
+<User id="AdminUser">
+<Email>adminuser@somewhere.com</Email>
+<Password>password</Password>
+</User>
+<User id="PowerUser">
+<Email>poweruser@somewhere.com</Email>
+<Password>anotherpassword</Password>
+</User>
+<User id="DatabaseUser">
+<Email>databasuser@somewhere.com</Email>
+<Password>yetanother</Password>
+</User>
+</DataFile>
